@@ -1,0 +1,57 @@
+2) There are several differences between JSON and XML
+   (i) JSON not using end tag while XML must have end tag.
+   (ii) JSON can be parsed with standard javascript function while XML can be parsed with an XML parser.
+   (iii) JSON supports array while XML doesn't support it.
+   (iv) JSON files are easily readable while XML files are comapartively difficult to read and interpret.
+   (v) Comments are not supported in JSON while XML supports it.
+   (vi) JSON supports only UTF-8 encoding while XML supports various encoding.
+
+3) XML uses a DTD to describe the data. A DTD defines the structure and the legal elements and
+   attributes of an XML document.
+   e.g. <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE note SYSTEM "Note.dtd">
+        <note>
+            <to>Tove</to>
+            <from>Jani</from>
+            <heading>Reminder</heading>
+            <body>Don't forget me this weekend!</body>
+        </note>
+
+4) Entity represents a special character, Which starts with ‘&’ character and end with ‘;’.
+   XML uses angular brackets to describe a tag so whenever we required less than, greater than 
+   or equal to character we have to use an entity reference to not to confuse with XML tag start 
+   symbol or a less than sign. Also, it makes code easier to read and keep XML errors away. 
+   Although only ‘<’ and ‘&’ sign creates errors but we use for many special character for better 
+   readability.
+
+5) An XML file that contains data is called an instance document.
+   Any XML document must be well-formed which means that:
+   (i) all element start-tags and end-tags must be properly nested
+   (ii) there should only be one top-level element in the file.
+
+6) JSON(javascript object notation) is a text-based format for representing structured data based on
+   javascript object syntax. It is used for transmitting data between server and web application.
+   (e.g. sending some data from server to the client so it can be displayed on a web page, or vice-versa)
+
+7) Since JSON is a format that encodes objects in a string. So, serialization means to convert an object
+   into string by JSON.stringify() method and deserialization means its opposite i.e to convert a string 
+   into an object by JSON.parse() method.
+
+8) JSON.stringify() method skip properties like functions and date. If you try to convert function into a
+   string then it will ommit your function.
+   e.g.   var obj = {name: "Abhijit", age: function(){return 22;}, city: "Patna"};
+          var myJSON = JSON.stringify(obj);
+          myJSON = {"name":"Abhijit","city":"Patna"}
+   In above example you can see that function is omitted by JSON.stringify() method. In same way date objects
+   are also not allowed.
+
+9) The differences between JSON and JSONP are as follows:-
+   (i) JSON using XMLHttpRequest object for requesting files while JSONP uses script tag for requesting files.
+   (ii) With JSON you can't send request to another domain whereas in JSONP you can send request to a
+        different domain.
+   (iii) e.g.  JSON    {"First_Name": "Abhijit", "Last_Name": "Kumar", "age": 22};
+               JSONP   func({"First_Name": "Abhijit", "Last_Name": "Kumar", "age": 22});
+
+10) Since server accepting only string data type so whenever you want to send anything to server it must 
+    be of string type, if not then first covert that object into string by JSON.stringify() method and then
+    send to server. So JSON.stringify() method is used for this purpose only to convert objects into strings.
